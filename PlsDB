@@ -1,16 +1,12 @@
 local PlsDB = {}
 
-local headers = {
-   ["content-type"] = "application/json"
-}
-
 -- Function to create a database
 function PlsDB.createDatabase(dbName)
     local url = "https://plsdb.itspls.repl.co/create/database/" .. dbName
     request = http_request or request or HttpPost or syn.request
    local data = {}
    local newdata = game:GetService("HttpService"):JSONEncode(data)
-   local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+   local abcdef = {Url = url, Body = newdata, Method = "POST"}
     local response = request(abcdef)
     
     local success = response == "true"
