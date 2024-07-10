@@ -8,7 +8,8 @@ local headers = {
 function PlsDB.createDatabase(dbName)
     local url = "https://plsdb.itspls.repl.co/create/database/" .. dbName
     request = http_request or request or HttpPost or syn.request
-    local response = request(url, "", Enum.HttpContentType.ApplicationUrlEncoded)
+   local nothing = {}
+    local response = request(url, nothing, Enum.HttpContentType.ApplicationUrlEncoded)
     
     local success = response == "true"
     local message = success and ("Database " .. dbName .. " created successfully") or "Failed to create database"
